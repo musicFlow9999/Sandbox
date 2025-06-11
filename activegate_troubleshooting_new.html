@@ -492,6 +492,9 @@
                         <div class="alert alert-info">
                             <strong>Success Indicator (post-escalation):</strong> Watch for "Connected to cluster" message in logs after infrastructure team applies fixes
                         </div>
+                        <div class="alert alert-info">
+                            <strong>Escalation Should Include:</strong> Connection failure log excerpts, deployment status snapshots, recent change details
+                        </div>
                         <div class="action-buttons">
                             <button class="btn btn-primary" onclick="resetScenario()">Start Over</button>
                             <button class="btn btn-secondary" onclick="showEscalation()">Escalate Issue</button>
@@ -580,6 +583,9 @@
                         </ul>
                         <div class="alert alert-info">
                             <strong>Success Indicators (post-escalation):</strong> "Listening on 9999" in logs, agent count > 0 in Dynatrace UI
+                        </div>
+                        <div class="alert alert-info">
+                            <strong>Escalation Should Include:</strong> Log excerpts showing agent connection attempts, network zone settings, and any certificate errors
                         </div>
                         <div class="action-buttons">
                             <button class="btn btn-primary" onclick="resetScenario()">Start Over</button>
@@ -682,6 +688,9 @@
                         </ul>
                         <div class="alert alert-info">
                             <strong>Escalation Should Include:</strong> Agent count trends, disconnect frequency, resource usage patterns, suspected capacity issues
+                        </div>
+                        <div class="alert alert-info">
+                            <strong>Success Indicator:</strong> Agent count remains stable with no recurring disconnect errors
                         </div>
                         <div class="action-buttons">
                             <button class="btn btn-primary" onclick="resetScenario()">Start Over</button>
