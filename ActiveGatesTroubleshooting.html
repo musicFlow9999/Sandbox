@@ -397,6 +397,33 @@
         .status-disconnected { background: #e74c3c; }
         .status-unknown { background: #95a5a6; }
         .status-warning { background: #f39c12; }
+
+        /* Modal for escalation info */
+        #escalationModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        #escalationModal .modal-content {
+            background: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            color: #333;
+            white-space: pre-wrap;
+        }
+        #escalationModal .modal-close {
+            float: right;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -1571,6 +1598,13 @@
         <div class="nav-item" onclick="toggleSection(15)" style="border-top: 1px solid #ecf0f1; margin-top: 8px; padding-top: 8px;">📚 Resources</div>
     </div>
 
+    <div id="escalationModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="hideEscalationModal()">&times;</span>
+            <pre id="escalationText"></pre>
+        </div>
+    </div>
+
     <script>
         let completedSteps = 0;
         const totalSteps = 65;
@@ -1667,7 +1701,7 @@ Don't forget to:
         }
 
         function showEscalationMessage() {
-            alert(`📞 ESCALATION INITIATED
+            const msg = `📞 ESCALATION INITIATED
 
 Handing off to L3 Support with complete documentation package:
 
@@ -1683,7 +1717,13 @@ Handing off to L3 Support with complete documentation package:
 • Server-level access required
 • Issue duration exceeds resolution timeframe
 
-Next: Transfer to L3 support team with complete handoff package.`);
+ Next: Transfer to L3 support team with complete handoff package.`;
+            document.getElementById('escalationText').textContent = msg;
+            document.getElementById('escalationModal').style.display = 'block';
+        }
+
+        function hideEscalationModal() {
+            document.getElementById('escalationModal').style.display = 'none';
         }
 
         // Initialize the page
