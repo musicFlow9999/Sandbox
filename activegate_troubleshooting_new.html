@@ -444,14 +444,6 @@
                         <div class="step-title">Check ActiveGate Logs</div>
                     </div>
                     <div class="step-content">
-                        <div class="alert alert-info">
-                            <strong>Log Access Options:</strong><br>
-                            • <strong>Splunk/Centralized Logging:</strong> Search for ActiveGate logs without server access<br>
-                            • <strong>Direct Server Access:</strong> Requires escalation to infrastructure team<br><br>
-                            <strong>Log Paths (for escalation reference):</strong><br>
-                            • <strong>Linux:</strong> /var/log/dynatrace/gateway/dynatracegateway*.log<br>
-                            • <strong>Windows:</strong> %PROGRAMDATA%\dynatrace\gateway\log\dynatracegateway*.log
-                        </div>
                         <div class="alert alert-warning">
                             <strong>Search Keywords:</strong> ERROR, Connect, Refused, TLS, Auth<br>
                             <strong>Look For:</strong> "failed to connect", HTTP 401/403, SSL handshake errors, no heartbeat
@@ -547,12 +539,6 @@
                         <div class="step-title">Check Logs & Agent Communication</div>
                     </div>
                     <div class="step-content">
-                        <div class="alert alert-info">
-                            <strong>Log Access Options:</strong><br>
-                            • <strong>ActiveGate Logs:</strong> Via Splunk/centralized logging (search for gateway logs)<br>
-                            • <strong>OneAgent Logs:</strong> Via centralized logging from sample hosts<br>
-                            • <strong>Direct Access:</strong> Requires escalation to infrastructure team
-                        </div>
                         <div class="alert alert-warning">
                             <strong>Search Keywords:</strong> listening, agent, connection, handshake<br>
                             <strong>Look For:</strong> "Listening on 9999", inbound connection attempts (or lack thereof)
