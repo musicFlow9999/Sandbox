@@ -433,10 +433,6 @@
                             </li>
                             <li class="checklist-item">
                                 <input type="checkbox" onchange="updateProgress()">
-                                <span>Check ActiveGate status in monitoring dashboards/alerts</span>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" onchange="updateProgress()">
                                 <span>Verify no recent maintenance windows or changes</span>
                             </li>
                         </ul>
@@ -487,7 +483,7 @@
                             </li>
                             <li class="checklist-item">
                                 <input type="checkbox" onchange="updateProgress()">
-                                <span>Create escalation ticket with detailed symptom description</span>
+                                <span>Create incident ticket in MTE</span>
                             </li>
                             <li class="checklist-item">
                                 <input type="checkbox" onchange="updateProgress()">
@@ -526,10 +522,6 @@
                             <li class="checklist-item">
                                 <input type="checkbox" onchange="updateProgress()">
                                 <span>Verify agent count shows as 0</span>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" onchange="updateProgress()">
-                                <span>Check ActiveGate connection status (should be green/connected)</span>
                             </li>
                         </ul>
                     </div>
@@ -684,7 +676,7 @@
                             </li>
                             <li class="checklist-item">
                                 <input type="checkbox" onchange="updateProgress()">
-                                <span>Verify agent network zone assignments via Dynatrace UI</span>
+                                <span>Check that all ActiveGates related to the network zone of interest have approximately the same count of agents</span>
                             </li>
                             <li class="checklist-item">
                                 <input type="checkbox" onchange="updateProgress()">
