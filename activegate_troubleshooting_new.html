@@ -323,6 +323,10 @@
         <div class="header">
             <h1>ActiveGate Troubleshooting Guide</h1>
             <p>Interactive troubleshooting for agent data collection issues</p>
+            <p style="margin-top:10px; font-size:0.95rem;">
+                Production support does not have server access. Troubleshooting
+                is performed through the Dynatrace UI and Splunk logs.
+            </p>
         </div>
 
         <div class="main-content">
@@ -357,8 +361,7 @@
                             <strong>Production Support Access:</strong><br>
                             🟢 <strong>Dynatrace UI:</strong> Deployment status, agent counts<br>
                             🟢 <strong>Log Aggregation:</strong> Splunk, centralized logging<br>
-                            🔒 <strong>Server Access:</strong> Requires escalation to Dynatrace Admins<br><br>
-                            <strong>Escalation Required For:</strong> Log file access, service restarts, netstat commands
+                            🔒 <strong>Server Access:</strong> Not available to Production Support
                         </div>
                     </div>
                     <div>
@@ -432,9 +435,6 @@
                                 <span>Verify no recent maintenance windows or changes</span>
                             </li>
                         </ul>
-                        <div class="escalation-required">
-                            <div class="escalation-text">SERVER ACCESS REQUIRED: Service status verification, network connectivity tests → ESCALATE to Dynatrace Admins</div>
-                        </div>
                     </div>
                 </div>
 
@@ -466,9 +466,6 @@
                                 <span>Verify heartbeat communication patterns</span>
                             </li>
                         </ul>
-                        <div class="escalation-required">
-                            <div class="escalation-text">IF LOGS NOT IN CENTRALIZED SYSTEM: Direct log file access requires escalation to Dynatrace Admins</div>
-                        </div>
                     </div>
                 </div>
 
@@ -492,9 +489,6 @@
                                 <span>Include specific error messages found in logs</span>
                             </li>
                         </ul>
-                        <div class="escalation-required">
-                            <div class="escalation-text">ESCALATION REQUIRED: Network troubleshooting, service restarts, certificate fixes, proxy configuration → Dynatrace Admins</div>
-                        </div>
                         <div class="alert alert-info">
                             <strong>Success Indicator (post-escalation):</strong> Watch for "Connected to cluster" message in logs after infrastructure team applies fixes
                         </div>
@@ -561,9 +555,6 @@
                                 <span>Review OneAgent logs from sample hosts for connection attempts</span>
                             </li>
                         </ul>
-                        <div class="escalation-required">
-                            <div class="escalation-text">SERVER ACCESS REQUIRED: netstat commands, direct log file access → ESCALATE to Dynatrace Admins</div>
-                        </div>
                     </div>
                 </div>
 
@@ -587,9 +578,6 @@
                                 <span>Document log findings and create detailed escalation ticket</span>
                             </li>
                         </ul>
-                        <div class="escalation-required">
-                            <div class="escalation-text">ESCALATION REQUIRED: Firewall configuration (port 9999), certificate fixes, network connectivity tests → Dynatrace Admins</div>
-                        </div>
                         <div class="alert alert-info">
                             <strong>Success Indicators (post-escalation):</strong> "Listening on 9999" in logs, agent count > 0 in Dynatrace UI
                         </div>
@@ -662,9 +650,6 @@
                                 <span>Identify failover patterns between multiple ActiveGates</span>
                             </li>
                         </ul>
-                        <div class="escalation-required">
-                            <div class="escalation-text">SERVER ACCESS REQUIRED: Resource usage analysis, service restarts, configuration changes → Dynatrace Admins</div>
-                        </div>
                     </div>
                 </div>
 
@@ -695,9 +680,6 @@
                                 <span>Create escalation ticket with detailed analysis and recommendations</span>
                             </li>
                         </ul>
-                        <div class="escalation-required">
-                            <div class="escalation-text">ESCALATION REQUIRED: Network stability investigation, ActiveGate resource analysis, capacity planning, version updates → Dynatrace Admins</div>
-                        </div>
                         <div class="alert alert-info">
                             <strong>Escalation Should Include:</strong> Agent count trends, disconnect frequency, resource usage patterns, suspected capacity issues
                         </div>
@@ -776,10 +758,8 @@
             const escalationInfo = `
 ESCALATION INFORMATION FOR PRODUCTION SUPPORT:
 
-🔒 PRODUCTION SUPPORT ACCESS LIMITATIONS:
-• No direct server access (security restrictions)
-• No ability to restart services or modify configurations
-• Limited to Dynatrace UI and centralized logging systems
+Production support does not have server access.
+Troubleshooting relies on the Dynatrace UI and Splunk logs.
 
 📋 WHEN ESCALATING TO DYNATRACE ADMINS, INCLUDE:
 • Scenario type and symptoms observed in Dynatrace UI
